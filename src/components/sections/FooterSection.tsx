@@ -20,7 +20,7 @@ export function FooterSection({ t, phoneNumber, lineOaUrl, whatsappUrl, facebook
         <div className="flex flex-col gap-6">
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 flex items-center justify-center overflow-hidden rounded-xl bg-white p-1">
-              <Image src="/assets/images/logo.webp" alt="Rodtuaromdee Logo" width={48} height={48} className="w-full h-full object-contain" />
+              <Image src="/assets/images/section_logo.webp" alt="Rodtuaromdee Logo" width={48} height={48} className="w-full h-full object-contain" />
             </div>
             <div className="flex flex-col">
               <span className="font-black text-xl tracking-tight leading-none text-white">รถตู้อารมณ์ดี</span>

@@ -18,7 +18,7 @@ export const siteConfig = {
     { href: "#articles", label: t.nav.articles },
     { href: "#contact", label: t.nav.contact },
   ],
-  whyUsImage: "/assets/images/section_gallery_01.webp",
+  whyUsImage: "/assets/images/section_about.webp",
   heroImage: "/assets/images/section_hero.webp",
   contactBgImage: "/assets/images/section_contact.webp",
   galleryImages: [
@@ -37,6 +37,7 @@ export const siteConfig = {
     { src: "/assets/images/section_gallery_13.webp", alt: "Airport Transfer", span: "col-span-2" },
     { src: "/assets/images/section_gallery_14.webp", alt: "Island Tour" },
     { src: "/assets/images/section_gallery_15.webp", alt: "Hill Station" },
+    { src: "/assets/images/section_about.webp", alt: "VIP Service", span: "col-span-2" },
   ],
   timelineImages: [
     { src: "/assets/images/section_timeline_01.webp", alt: "Trip 1", caption: "Pattaya Tour" },

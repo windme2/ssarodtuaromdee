@@ -79,7 +79,7 @@ export function Navigation({
         {/* Brand */}
         <a href="#" onClick={(e) => handleSmoothScroll(e, "#")} className="flex items-center gap-3 group">
           <div className="w-12 h-12 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform overflow-hidden rounded-xl bg-white p-1">
-            <Image src="/assets/images/logo.webp" alt="Rodtuaromdee Logo" width={48} height={48} className="w-full h-full object-contain" />
+            <Image src="/assets/images/section_logo.webp" alt="Rodtuaromdee Logo" width={48} height={48} className="w-full h-full object-contain" />
           </div>
           <div className="flex flex-col">
             <span className="font-black text-xl tracking-tight leading-none text-white">รถตู้อารมณ์ดี</span>

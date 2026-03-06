@@ -14,19 +14,30 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
-  const isEn = resolvedParams.lang === "en";
+  const lang = resolvedParams.lang;
   
-  const title = isEn 
-    ? "Rodtuaromdee | VIP Van Rental with Professional Driver in Thailand"
-    : "รถตู้อารมณ์ดี | VIP Van Rental with Professional Driver in Thailand";
-    
-  const description = isEn
-    ? "Premium VIP van rental with professional driver. New vans, clean, comfortable. Nationwide service in Thailand. Airport transfer, events, seminars. Call 084-290-8841 or LINE: @519oggok"
-    : "บริการเช่ารถตู้ VIP พร้อมคนขับมืออาชีพ รถใหม่ สะอาด แอร์เย็น เดินทางทั่วไทย รับ-ส่งสนามบิน งานอีเวนต์ สัมมนา | Premium VIP van rental with professional driver. New vans, clean, comfortable. Nationwide service in Thailand.";
+  const titles: Record<string, string> = {
+    en: "Rodtuaromdee | VIP Van Rental with Professional Driver in Thailand",
+    zh: "Rodtuaromdee | 泰国VIP包车服务 专业司机",
+    th: "รถตู้อารมณ์ดี | เช่ารถตู้ VIP พร้อมคนขับมืออาชีพ",
+  };
 
-  const keywords = isEn
-    ? "VIP van rental Thailand, van rental Bangkok, private van service, airport transfer Bangkok"
-    : "เช่ารถตู้, รถตู้ VIP, รถตู้พร้อมคนขับ, เช่ารถตู้กรุงเทพ, รถตู้เที่ยว, รถตู้อารมณ์ดี";
+  const descriptions: Record<string, string> = {
+    en: "Premium VIP van rental with professional driver. New vans, clean, comfortable. Nationwide service in Thailand. Airport transfer, events, seminars. Call 084-290-8841 or LINE: @519oggok",
+    zh: "泰国VIP包车服务 专业司机 新车 干净舒适 全国服务 机场接送 活动 研讨会 电话 084-290-8841 LINE: @519oggok",
+    th: "บริการเช่ารถตู้ VIP พร้อมคนขับมืออาชีพ รถใหม่ สะอาด แอร์เย็น เดินทางทั่วไทย รับ-ส่งสนามบิน งานอีเวนต์ สัมมนา โทร 084-290-8841 LINE: @519oggok",
+  };
+
+  const keywordsByLang: Record<string, string> = {
+    en: "VIP van rental Thailand, van rental Bangkok, private van service, airport transfer Bangkok",
+    zh: "泰国包车, VIP包车服务, 曼谷包车, 机场接送",
+    th: "เช่ารถตู้, รถตู้ VIP, รถตู้พร้อมคนขับ, เช่ารถตู้กรุงเทพ, รถตู้เที่ยว, รถตู้อารมณ์ดี",
+  };
+
+  const title = titles[lang] || titles.th;
+  const description = descriptions[lang] || descriptions.th;
+  const keywords = keywordsByLang[lang] || keywordsByLang.th;
+  const locale = lang === "en" ? "en_US" : lang === "zh" ? "zh_CN" : "th_TH";
 
   return {
     title,
@@ -41,7 +52,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       title,
       description,
       type: "website",
-      locale: isEn ? "en_US" : "th_TH",
+      locale,
       images: [
         {
           url: "/og-image.webp",

@@ -102,8 +102,6 @@ export default function Home({ params }: { params: Promise<{ lang: string }> }) 
         <FaqSection t={t} lang={lang} />
       </FadeInSection>
 
-      <FaqSection t={t} lang={lang} />
-
       <ContactSection t={t} lineOaUrl={lineOaUrl} phoneNumber={phoneNumber} bgImage={siteConfig.contactBgImage} />
 
       <FooterSection t={t} phoneNumber={phoneNumber} lineOaUrl={lineOaUrl} whatsappUrl={whatsappUrl} facebookUrl={facebookUrl} navLinks={navLinks} lang={lang} />
