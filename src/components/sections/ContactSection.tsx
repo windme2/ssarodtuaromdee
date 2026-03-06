@@ -7,8 +7,8 @@ import { Translations } from "@/data/translations";
 export function ContactSection({ t, lineOaUrl, phoneNumber, bgImage }: { t: Translations, lineOaUrl: string, phoneNumber: string, bgImage: string }) {
   return (
     <section id="contact" className="py-20 md:py-28 px-4 bg-slate-900 relative border-t border-slate-800 scroll-mt-20">
-      <div className="absolute inset-0 opacity-[0.15]">
-        <Image src={bgImage} alt="Background" fill className="object-cover" sizes="100vw" />
+      <div className="absolute inset-0 opacity-[0.20]">
+        <Image src={bgImage} alt="Background" fill className="object-cover object-top" sizes="100vw" />
       </div>
       <div className="max-w-6xl mx-auto relative z-10 flex flex-col items-center">
         <div className="text-center mb-16">
